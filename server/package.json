@@ -1,0 +1,26 @@
+{
+  "name": "the_people_tree",
+  "version": "1.0.0",
+  "description": "Returns 3D family tree objects",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambodo7/The-People-Tree.git"
+  },
+  "keywords": [
+    "Family"
+  ],
+  "author": "Samuel Stephenson",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/sambodo7/The-People-Tree/issues"
+  },
+  "homepage": "https://github.com/sambodo7/The-People-Tree#readme"
+}
