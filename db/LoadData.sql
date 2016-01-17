@@ -12,7 +12,11 @@ INSERT INTO PERSON (PERSON_ID, FIRST_NAME, LAST_NAME, MAIDEN_NAME, MIDDLE_NAMES,
 (11, 'Martha', 'Conn', 'Monaghan', 'Anne', 'Anne', '1924-02-29', '2008-10-26', 'female'),
 (12, 'Judy', 'Langsdale', 'Haynes', 'Anne', NULL, '1957-05-28', NULL, 'female'),
 (13, 'Margaret', 'Stephenson', 'Conn', 'Elizabeth', NULL, '1961-05-18', NULL, 'female'),
-(14, 'Frederick', 'Stephenson', NULL, 'Crozier','Fred', '1960-04-14', NULL, 'male');
+(14, 'Frederick', 'Stephenson', NULL, 'Crozier','Fred', '1960-04-14', NULL, 'male'),
+(15, 'Meurial', 'Stephenson', NULL, 'Elizabeth', NULL, '1968-04-03', NULL, 'female'),
+(16, 'Mary', 'Stephenson', 'Crozier', 'Agnes', NULL, '1934-03-01', NULL, 'female'),
+(17, 'William', 'Stephenson', NULL, 'John', NULL, '1926-02-26', '2001-10-09', 'male'),
+(18, 'Wesley', 'Stephenson', NULL, NULL, NULL, '1975-03-03', NULL, 'male');
 
 INSERT INTO PARENT (CHILD_ID, PARENT_ID, TYPE) VALUES
 (1, 2, 'father'),
@@ -29,4 +33,10 @@ INSERT INTO PARENT (CHILD_ID, PARENT_ID, TYPE) VALUES
 (6, 14, 'father'),
 (3, 12, 'mother'),
 (13, 10, 'father'),
-(13, 11, 'mother');
+(13, 11, 'mother'),
+(14, 16, 'mother'),
+(15, 16, 'mother'),
+(14, 17, 'father'),
+(15, 17, 'father'),
+(18, 16, 'mother'),
+(18, 17, 'father');
