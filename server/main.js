@@ -1,4 +1,5 @@
 var express = require('express');
+var tree = require('./jsonTree.js');
 var app = express();
 
 app.get('/', function (req, res) {
@@ -13,7 +14,7 @@ app.post('/', function (req, res) {
 
 app.get('/view_tree', function (req, res) {
    console.log("Got a GET request for /view_tree");
-   res.send('Tree');
+   res.send(tree.getParents());
 })
 
 var server = app.listen(8081, function () {
