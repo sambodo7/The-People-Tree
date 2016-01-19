@@ -14,7 +14,13 @@ app.post('/', function (req, res) {
 
 app.get('/view_tree', function (req, res) {
    console.log("Got a GET request for /view_tree");
-   res.send(tree.getParents());
+   tree.getParents((err,data) => {
+       if(err) {
+           throw err;
+       }
+       res.send(data);
+   });
+    
 })
 
 var server = app.listen(8081, function () {

@@ -1,3 +1,3 @@
-exports.getParents = function () {
-   return 'hi';
+exports.getParents = function (callback) {
+   callback(null,'hi')
 }
