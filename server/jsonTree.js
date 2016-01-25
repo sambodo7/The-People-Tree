@@ -1,3 +1,3 @@
 exports.getParents = function (callback) {
-   callback(null,'hi')
-}
+   callback(null,'hi');
+};
