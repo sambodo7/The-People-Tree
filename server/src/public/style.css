@@ -1,0 +1,25 @@
+body {
+	display: flex;
+	height: 100%;
+}
+
+#data {
+	flex: 1;
+	border-left-width: 1px;
+	border-left-color: grey;
+	border-left-style: solid;
+	padding-top: 5px;
+}
+
+#tree-holder {
+	flex: 3;
+}
+
+aside h3 {
+	text-align: center;
+}
+
+#person-info {
+	width: 100%;
+}
+
