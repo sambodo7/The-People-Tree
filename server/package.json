@@ -6,7 +6,9 @@
   "dependencies": {
     "express": "^4.13.3",
     "hogan-express": "^0.5.2",
-    "mysql": "^2.10.2"
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1"
   },
   "devDependencies": {
     "cucumber": "^0.9.4"

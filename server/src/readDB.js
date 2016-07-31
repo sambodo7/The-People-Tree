@@ -1,10 +1,11 @@
 var mysql = require('mysql');
+var config = require('./config');
 
 var pool      =    mysql.createPool({
     connectionLimit : 100, //important
-    host     : 'localhost',
-    user     : process.env.TREE_DB_USERNAME,
-    password : process.env.TREE_DB_PASSWORD,
+    host     : config.dbHost,
+    user     : config.dbUsername,
+    password : config.dbPassword,
     database : 'the_people',
     debug    :  false
 });
@@ -21,6 +22,7 @@ function handle_database(query, callback) {
         console.log('connected as id ' + connection.threadId);
        
         connection.query(query,function(err,rows){
+            console.log(err);
             connection.release();
             if(err) {
                 callback(err + "\n" + query);

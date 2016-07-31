@@ -4,7 +4,7 @@ INSERT INTO PERSON (PERSON_ID, FIRST_NAME, LAST_NAME, MAIDEN_NAME, MIDDLE_NAMES,
 ('1FAFE658530F', 'Jordan', 'Stephenson', 'Langsdale', 'Rylee', NULL, '1989-09-01', NULL, 'female', NULL),
 ('79610B8C186D', 'John', 'Stephenson', NULL, 'Wiliam', NULL, '1997-06-14', NULL, 'male', NULL),
 ('CF8ADD4B6647', 'Joyce', 'Thompson', 'Stephenson', 'Margaret Elizabeth', NULL, '1989-01-09', NULL, 'female', NULL),
-('40E81BF7D187' , 'Claire', 'Stephenson', NULL, 'Anne', NULL, '2002-11-26', NULL, 'female', NULL),
+('40E81BF7D187', 'Claire', 'Stephenson', NULL, 'Anne', NULL, '2002-11-26', NULL, 'female', NULL),
 ('7B2B438D8AD3', 'Lindsay', 'Langsdale', NULL, 'Marie', NULL, '1983-03-29', NULL, 'female', NULL),
 ('92CEA8EFDCE4', 'Robert', 'Thompson', NULL, 'Jonanthan', NULL, '2012-01-06', NULL, 'male', NULL),
 ('73C18EB1EC72', 'Bella', 'Thompson', NULL, 'Joyce', NULL, '2014-07-18', NULL, 'female', NULL),
@@ -23,7 +23,7 @@ INSERT INTO PERSON (PERSON_ID, FIRST_NAME, LAST_NAME, MAIDEN_NAME, MIDDLE_NAMES,
 ('002001005006', 'Kenneth', 'Stephenson', NULL, 'John', 'Kenny', '1963-08-23', '1980-11-07', 'male', NULL),
 ('7939110BB3C2', 'William', 'Crozier', NULL, NULL, NULL, '1900-07-20', '1944-06-28', 'male', NULL),
 ('582016FFFAAB', 'Mary', 'Iwirin', 'Ross', 'Eveline', 'May', '1905-03-09', '1968-12-10', 'female', NULL),
-('ABB000054900', 'Grace', 'Stephenson', 'Crozier', 'Harriett', NULL, NULL, '1975-03-31', 'female', NULL),
+('ABB000054900', 'Grace', 'Stephenson', 'Crozier', 'R', NULL, NULL, '1975-03-31', 'female', NULL),
 ('2156151AAAAA', 'James', 'Stephenson', NULL, 'Samuel', 'The Dary', NULL, NULL, 'male', NULL),
 ('B00B5AB00B5A', 'William', 'Crozier', NULL, NULL, NULL, NULL, NULL, 'male', NULL),
 ('0235479416FF', 'Esther', 'Crozier', 'Lockhart', 'Elizabeth', 'Lizzie', NULL, NULL, 'female', NULL),
@@ -38,7 +38,10 @@ INSERT INTO PERSON (PERSON_ID, FIRST_NAME, LAST_NAME, MAIDEN_NAME, MIDDLE_NAMES,
 ('65D112DABF4B', 'Robert', 'Crozier', NULL, 'Thomas', NULL, '1897-08-19', NULL, 'male', NULL),
 ('AABBCCDDFF00', 'Esther', 'Crozier', NULL, 'Elizabeth', 'Essie', '1899-01-07', NULL, 'female', NULL),
 ('BBCCC0058545', 'Agnes', 'Beggs', 'Crozier', 'Matilda', NULL, '1894-09-12', NULL, 'female', NULL),
-('CCAA26669999', 'Andrew', 'Beggs', NULL, NULL, NULL, NULL, NULL, 'male', NULL);
+('CCAA26669999', 'Andrew', 'Beggs', NULL, NULL, NULL, NULL, NULL, 'male', NULL),
+('214566725522', 'Kenneth', 'Stephenson', NULL, 'James', 'Kenny', '1987-10-01', NULL, 'male', NULL),
+('BBBBBBBBBBBB', 'Wiliam', 'Crozier', NULL, 'F', NULL, NULL, 'male', NULL),
+('FFFFFFFFFFFF', 'Florence', 'Crozier', NULL, 'T', NULL, NULL, 'female', NULL);
 
 INSERT INTO PARENT (CHILD_ID, PARENT_ID, TYPE) VALUES
 ('CD1F881450A8', 'BADF6672F5BB', 'father'),
@@ -92,7 +95,10 @@ INSERT INTO PARENT (CHILD_ID, PARENT_ID, TYPE) VALUES
 ('AABBCCDDFF00', 'B00B5AB00B5A', 'father'),
 ('AABBCCDDFF00', '0235479416FF', 'mother'),
 ('BBCCC0058545', 'B00B5AB00B5A', 'father'),
-('BBCCC0058545', '0235479416FF', 'mother');
+('BBCCC0058545', '0235479416FF', 'mother'),
+('214566725522', 'AFBCED165176', 'father'),
+('ABB000054900', 'BBBBBBBBBBBB', 'father'),
+('FFFFFFFFFFFF', 'BBBBBBBBBBBB', 'father');
 
 INSERT INTO PARTNER (PERSON_1_ID, PERSON_2_ID, PLACE, DATE) VALUES
 ('7939110BB3C2', '582016FFFAAB', 'Kingsmill Presbyterian', '1926-02-23'),
