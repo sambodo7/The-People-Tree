@@ -69,7 +69,7 @@ $.getJSON( `${config.apiBase}/social?socialID=${session.user.id}&provider=${sess
         physics:false
     };
 
-    var data =  {
+    var nodeData =  {
         nodes : new vis.DataSet( [ {
             "id": data.PERSON_ID,
             "label": data.FIRST_NAME,
@@ -80,7 +80,7 @@ $.getJSON( `${config.apiBase}/social?socialID=${session.user.id}&provider=${sess
         edges : new vis.DataSet([])
     };
 
-    network = new vis.Network(container, data, options);
+    network = new vis.Network(container, nodeData, options);
     network.on("click", nodeClickEvent);
     
     } )

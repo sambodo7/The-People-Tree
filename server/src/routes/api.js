@@ -29,7 +29,7 @@ router.get( "/social", (req, res) => {
         switch( req.query.provider ){
 
             case "facebook":
-                tree.getByFacebookID( req.query.socialID, (err, data ) => respone( err, data, res ) )
+                tree.getByFacebookID( req.query.socialID, (err, data ) => respone( err, data[0], res ) )
                 break;
             default:
                 res.status(400).sent( `Unsupported provider ${req.query.provider}` )
