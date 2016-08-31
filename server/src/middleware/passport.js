@@ -6,10 +6,20 @@ module.exports =function(passport) {
     passport.use(new FacebookStrategy({
         clientID: config.facebookID,
         clientSecret: config.facebookSecret,
-        callbackURL: "http://localhost:8080/leaf"
+        callbackURL: "http://localhost:8080/auth/facebook/callback"
       },
       function(accessToken, refreshToken, profile, done) {
+
+      	done(null, profile);
         
       }
     ));
+
+    passport.serializeUser(function(user, done) {
+        done(null, user);
+    });
+
+    passport.deserializeUser(function (id, done) {
+        done( null, id );
+});
 }

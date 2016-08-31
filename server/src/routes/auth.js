@@ -1,6 +1,10 @@
 var express = require('express');
 var passport = require('passport');
 var router = new express.Router();
+
+router.use( passport.initialize() );
+router.use(passport.session());
+
 require('../middleware/passport')(passport)
 
 // Redirect the user to Facebook for authentication.  When complete,
@@ -13,7 +17,12 @@ router.get('/facebook', passport.authenticate('facebook'));
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
 router.get('/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/leaf',
-                                      failureRedirect: '/' }));
+    passport.authenticate('facebook', 
+    	{ 
+    		successRedirect: '/leaf',
+            failureRedirect: '/' 
+        }
+    )
+);
 
 module.exports = router;

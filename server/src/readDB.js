@@ -65,4 +65,16 @@ exports.getChildren = function(parentId, callback) {
             "ON PERSON.PERSON_ID=PARENT.CHILD_ID " +
             "WHERE PARENT.PARENT_ID='" + parentId + "'", callback);
     }
-}
+};
+
+exports.getByFacebookID = function(facebookID, callback) {
+    if(!facebookID) {
+        callback(new Error("no FacebookID decleared"));
+        return;
+    }
+    else {
+        handle_database("SELECT * " +
+            "FROM PERSON " +
+            "WHERE PERSON.FACEBOOKID='" + facebookID + "'", callback);
+    }
+};
