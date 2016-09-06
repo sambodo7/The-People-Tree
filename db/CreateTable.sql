@@ -5,12 +5,12 @@ FIRST_NAME CHAR(50) NULL COMMENT "Person's legal first name at birth",
 LAST_NAME CHAR(50) NULL COMMENT "Person's legal family name at birth",
 MAIDEN_NAME CHAR(50) NULL COMMENT "Person's family name before getting mirried",
 MIDDLE_NAMES CHAR(250) NULL COMMENT "Person's middle name",
-ALLIS CHAR(12) NULL COMMENT "Person's nickname",
+ALIAS CHAR(12) NULL COMMENT "Person's nickname",
 DOB  DATE NULL COMMENT "Date of Birth",
 DOD DATE NULL COMMENT "Date of Death",
 SEX ENUM ('male', 'female', 'other') NULL COMMENT "Person's sex at birth",
 COD VARCHAR(100) NULL COMMENT "Cause of Death",
-FACEBOOKID VARCHAR(20) NULL COMMENT "Facebook id"
+FACEBOOK_ID VARCHAR(20) NULL COMMENT "Facebook id"
 );
 
 Create TABLE PARENT

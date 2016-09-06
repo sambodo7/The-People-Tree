@@ -75,6 +75,6 @@ exports.getByFacebookID = function(facebookID, callback) {
     else {
         handle_database("SELECT * " +
             "FROM PERSON " +
-            "WHERE PERSON.FACEBOOKID='" + facebookID + "'", callback);
+            "WHERE PERSON.FACEBOOK_ID='" + facebookID + "'", callback);
     }
 };
