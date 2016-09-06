@@ -4,12 +4,21 @@
   "description": "Returns 3D family tree objects",
   "main": "main.js",
   "dependencies": {
-    "express": "^4.13.3",
-    "mysql": "^2.10.2"
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "hogan-express": "^0.5.2",
+    "mysql": "^2.10.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "cucumber": "^0.9.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/main.js",
+    "test": "node_modules/.bin/cucumber.js"
   },
   "repository": {
     "type": "git",

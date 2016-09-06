@@ -32,3 +32,10 @@ server/node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# Environment veribles
+.env.sh
+
+# Database files
+db/LoadData.sql
+
