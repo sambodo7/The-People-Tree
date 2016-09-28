@@ -5,7 +5,8 @@ module.exports = {
     dbPassword: process.env.DB_PASSWORD || "password",
     facebookSecret: process.env.FB_SECRET,
     facebookID: process.env.FB_ID,
-    port: process.env.WEB_PORT || 80
+    port: process.env.WEB_PORT || 80,
+    url: process.env.WEB_URL || "localhost"
 
 
 };

@@ -6,7 +6,7 @@ module.exports =function(passport) {
     passport.use(new FacebookStrategy({
         clientID: config.facebookID,
         clientSecret: config.facebookSecret,
-        callbackURL: "http://localhost:8080/auth/facebook/callback"
+        callbackURL: `http://${ config.url }:${ config.port }/auth/facebook/callback`
       },
       function(accessToken, refreshToken, profile, done) {
 
