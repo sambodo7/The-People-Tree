@@ -1,1 +1,0 @@
-export DB_PASSWORD=Ramor12Sand
