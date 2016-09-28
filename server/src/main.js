@@ -7,6 +7,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+var config = require("./config");
+
 app.set('view engine', 'html');    // use .html extension for templates 
 app.set('layout', 'layout');       // use layout.html as the default layout
 app.enable('view cache');
@@ -46,7 +48,7 @@ app.use('/api', api);
 
 app.use("/auth", auth);
 
-var server = app.listen(8080, () => {
+var server = app.listen( config.port, () => {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Tree app listening at http://%s:%s", host, port);

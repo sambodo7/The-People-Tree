@@ -4,7 +4,8 @@ module.exports = {
     dbUsername: process.env.DB_USERNAME || "root",
     dbPassword: process.env.DB_PASSWORD || "password",
     facebookSecret: process.env.FB_SECRET,
-    facebookID: process.env.FB_ID
+    facebookID: process.env.FB_ID,
+    port: process.env.WEB_PORT || 80
 
 
 };
