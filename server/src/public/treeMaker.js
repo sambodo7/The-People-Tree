@@ -1,6 +1,6 @@
 //Temp code
 const config = {
-    apiBase: "http://localhost:8080/api"
+    apiBase: "http://localhost/api"
 }
 const session = JSON.parse( atob( Cookies.get("session") ) );
 
@@ -22,7 +22,7 @@ const nodeClickEvent = function (param) {
 
         if (!nodeData.nodes._data[param.nodes[0]].loaded) {
 
-            $.getJSON("http://localhost:8080/api/parents?userId="+ param.nodes[0] +"&generationBack=1", d => {
+            $.getJSON(`${ config.apiBase }/parents?userId=${ param.nodes[0] }&generationBack=1`, d => {
                 
                 var level = nodeData.nodes._data[param.nodes[0]].level + 1;
 
@@ -33,7 +33,7 @@ const nodeClickEvent = function (param) {
                 })
             })
 
-            $.getJSON("http://localhost:8080/api/children?userId="+ param.nodes[0] +"&generationBack=1", d => {
+            $.getJSON(`${ config.apiBase }/children?userId=${ param.nodes[0] }&generationBack=1`, d => {
 
                 var level = nodeData.nodes._data[param.nodes[0]].level - 1;
 
@@ -54,7 +54,7 @@ const nodeClickEvent = function (param) {
 
 }
 
-$.getJSON( `${config.apiBase}/social?socialID=${session.user.id}&provider=${session.user.provider}`, data => {
+$.getJSON( `${ config.apiBase }/social?socialID=${session.user.id}&provider=${session.user.provider}`, data => {
     var container = document.getElementById('tree-holder');
 
     var options = {
