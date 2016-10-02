@@ -1,7 +1,3 @@
-//Temp code
-const config = {
-    apiBase: "http://localhost/api"
-}
 const session = JSON.parse( atob( Cookies.get("session") ) );
 
 

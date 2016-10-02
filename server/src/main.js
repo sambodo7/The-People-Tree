@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 app.get('/leaf', (req, res) => {
 
   if (req.session && req.session.passport ) {
+    res.locals = { apiBase: `http://${ config.url }:${ config.port }/api`}
     res.cookie("session", new Buffer( JSON.stringify( req.session.passport ) ).toString("base64") ).render('index');
   } else {
   	res.send("no session");
