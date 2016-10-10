@@ -38,4 +38,5 @@ server/node_modules
 
 # Database files
 db/LoadData.sql
+db/backup.sql
 

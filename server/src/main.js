@@ -40,7 +40,7 @@ app.get('/leaf', (req, res) => {
     res.locals = { apiBase: `http://${ config.url }:${ config.port }/api`}
     res.cookie("session", new Buffer( JSON.stringify( req.session.passport ) ).toString("base64") ).render('index');
   } else {
-  	res.send("no session");
+  	res.redirect("/");
   }
 
 });
