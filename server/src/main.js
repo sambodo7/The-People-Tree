@@ -26,22 +26,22 @@ app.use( session( {
 } ) );
 
 app.use( ( req, res, next ) => {
-  console.log(new Date().toLocaleTimeString(), req.method, req.url);
-  next();
+    console.log(new Date().toLocaleTimeString(), req.method, req.url);
+    next();
 });
 
 app.get("/", (req, res) => {
-  res.render('login')
+    res.render('login')
 });
 
 app.get('/leaf', (req, res) => {
 
-  if (req.session && req.session.passport ) {
-    res.locals = { apiBase: `http://${ config.url }:${ config.port }/api`}
-    res.cookie("session", new Buffer( JSON.stringify( req.session.passport ) ).toString("base64") ).render('index');
-  } else {
-  	res.redirect("/");
-  }
+    if (req.session && req.session.passport ) {
+        res.locals = { apiBase: `http://${ config.url }:${ config.port }/api`}
+        res.cookie("session", new Buffer( JSON.stringify( req.session.passport ) ).toString("base64") ).render('index');
+    } else {
+  	    res.redirect("/");
+    }
 
 });
 
