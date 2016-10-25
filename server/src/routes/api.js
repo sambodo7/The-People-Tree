@@ -14,6 +14,10 @@ function respone( err, data, res ) {
 
 }
 
+router.post( "/", ( req, res ) => {
+    res.json( {} );
+} )
+
 router.get( "/parents", (req, res) => {
     tree.getParents(req.query.userId, req.query.generationBack, (err, data ) => respone( err, data, res ) );
 });

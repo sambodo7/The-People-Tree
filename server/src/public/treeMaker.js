@@ -6,7 +6,11 @@ function displayAsideInfo ( node ) {
 
     for( prop in nodeData.nodes._data[node].info ) {
         if(nodeData.nodes._data[node].info[prop]) {
-            tableBuilder = tableBuilder + "<tr><th>" + prop + "</th><td>" + nodeData.nodes._data[node].info[prop] + "</td></tr>"
+            if( prop === "PERSON_ID" ) {
+                tableBuilder = tableBuilder + "<tr hidden><th>" + prop + "</th><td id='currentPerson'>" + nodeData.nodes._data[node].info[prop] + "</td></tr>"
+            } else {
+                tableBuilder = tableBuilder + "<tr><th>" + prop + "</th><td>" + nodeData.nodes._data[node].info[prop] + "</td></tr>"
+            }
         }
 
     }
@@ -15,6 +19,27 @@ function displayAsideInfo ( node ) {
 
 }
 
+function mapPersonDataToEdit ( personInfo ) {
+
+    $("#first-name-edit").val( personInfo.FIRST_NAME );
+    $("#middle-name-edit").val( personInfo.MIDDLE_NAMES );
+    $("#last-name-edit").val( personInfo.LAST_NAME );
+    $("#maiden-name-edit").val( personInfo.MAIDEN_NAME );
+    $("#alias-edit").val( personInfo.ALIAS );
+    $("#DOB-edit").val( personInfo.DOB );
+    $("#DOD-edit").val( personInfo.DOD );
+    $("#sex-edit").val( personInfo.SEX );
+    $("#COD-edit").val( personInfo.COD );
+
+
+}
+
+function savePersonEdit () {
+
+    $("#submit-edit-form").click();
+    $("#close-edit-form").click();
+
+}
 
 const nodeClickEvent = function (param) {
 
@@ -90,7 +115,21 @@ $.getJSON( `${ config.apiBase }/social?socialID=${session.user.id}&provider=${se
     
     } )
 
-$('#delete_button').on("click", () => {
+$( "#delete_button" ).on("click", () => {
     nodeData.edges.remove(network.getSelectedEdges());
     nodeData.nodes.remove(network.getSelectedNodes());
-})
+} );
+
+$( "#edit_Person" ).on( "shown.bs.modal", () => mapPersonDataToEdit( nodeData.nodes._data[ $("#currentPerson").text() ].info ) );
+
+$( "#edit-save" ).on( "click", () => savePersonEdit() );
+
+$('#edit-person').submit( event => {
+    
+    event.preventDefault(); // Stops browser from navigating away from page
+    var data = {};
+    // build a json object or do something with the form, store in data
+    $.post( config.apiBase, data, resp => {
+        // do something when it was successful
+    });
+});

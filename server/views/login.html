@@ -1,23 +1,78 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="./login.css">
-    <link rel="stylesheet" type="text/css" href="./font-awesome-4.6.3/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap-social.css">
 </head>
 <body>
-    <section>
-        <ul>
-        	<li><a class="btn btn-block btn-social btn-facebook" href="/auth/facebook">
-                <span class="fa fa-facebook"></span> Sign in with Facebook
-            </a></li>
-        	<li><a class="btn btn-block btn-social btn-google" href="/auth/google">
-                <span class="fa fa-google"></span> Sign in with Google
-            </a></li>
-        	<li><a class="btn btn-block btn-social btn-twitter">
-                <span class="fa fa-twitter"></span> Sign in with Twitter
-            </a></li>
-        </ul>
-    </section>
+    <div class="container-fluid">
+        <div class="page-header">
+            <h1>
+                <span>The People Tree</span>
+                <button class='btn btn-primary pull-right' data-toggle="modal" data-target="#login_options">Sign In/Login</button>
+            </h1>            
+        </div>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="http://slodive.com/wp-content/uploads/2012/11/celtic-tree-of-life-tattoo/tattooed-celtic-tree-of-life.jpg" alt="First image">
+                    <div class="carousel-caption">
+                        Find your roots 
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="..." alt="Second image">
+                    <div class="carousel-caption">
+                    ...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="login_options" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Sign in with your Social Account</h4>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li><a class="btn btn-block btn-social btn-facebook" href="/auth/facebook">
+                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                            </a></li>
+                            <li><a class="btn btn-block btn-social btn-google" href="/auth/google">
+                                <span class="fa fa-google"></span> Sign in with Google
+                            </a></li>
+                            <li><a class="btn btn-block btn-social btn-twitter">
+                                <span class="fa fa-twitter"></span> Sign in with Twitter
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./lib/jquery-2.2.3.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
 </body>
 </html>
