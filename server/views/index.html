@@ -2,6 +2,7 @@
 <head>
     <script src="./lib/jquery-2.2.3.min.js"></script>
     <script src="./lib/vis-4.16.1.min.js"></script>
+    <script src="./lib/date.min.js"></script>
     <script src="./lib/cookie.js"></script>
     <script type="text/javascript">config = {
 
@@ -41,52 +42,53 @@
                 </div>
                 <div class="modal-body">
                     <form id="edit-person" class="form-horizontal" method="POST" action="{{{apiBase}}}">
+                        <input type="text" id="id-edit" name="PERSON_ID" hidden>
                         <div class="form-group">
                             <label for="first-name-edit" class="col-sm-2 control-label">First Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="first-name-edit" placeholder="first name">
+                                <input type="text" name="FIRST_NAME" class="form-control" id="first-name-edit" placeholder="first name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="middle-name-edit" class="col-sm-2 control-label">Middle Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="middle-name-edit" placeholder="middle name">
+                                <input type="text" name="MIDDLE_NAMES" class="form-control" id="middle-name-edit" placeholder="middle name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="last-name-edit" class="col-sm-2 control-label">Last Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="last-name-edit" placeholder="last name">
+                                <input type="text" name="LAST_NAME" class="form-control" id="last-name-edit" placeholder="last name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="maiden-name-edit" class="col-sm-2 control-label">Maiden Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="maiden-name-edit" placeholder="maiden name">
+                                <input type="text" name="MAIDEN_NAME" class="form-control" id="maiden-name-edit" placeholder="maiden name">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="alias-edit" class="col-sm-2 control-label">Alias</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="alias-edit" placeholder="Alias">
+                                <input type="text" name="ALIAS" class="form-control" id="alias-edit" placeholder="Alias">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="DOB-edit" class="col-sm-2 control-label">DOB</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="DOB-edit" placeholder="yyyy/mm/dd">
+                                <input type="date" name="DOB" class="form-control" id="DOB-edit" placeholder="yyyy/mm/dd">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="DOD-edit" class="col-sm-2 control-label">DOD</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="DOD-edit" placeholder="yyyy/mm/dd">
+                                <input type="date" name="DOD" class="form-control" id="DOD-edit" placeholder="yyyy/mm/dd">
                             </div>
                         </div>
                          <div class="form-group">
                             <label for="sex-edit" class="col-sm-2 control-label">Sex:</label>
                             <div class="col-sm-10">
-                                <select class="form-control" id="sex-edit">
+                                <select name="SEX" class="form-control" id="sex-edit">
                                     <option>male</option>
                                     <option>female</option>
                                     <option>other</option>
@@ -96,7 +98,7 @@
                         <div class="form-group">
                             <label for="COD-edit" class="col-sm-2 control-label">COD</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="COD-edit" placeholder="Cause of Death">
+                                <input type="text" name="COD" class="form-control" id="COD-edit" placeholder="Cause of Death">
                             </div>
                         </div>
                         <input hidden type="submit" id="submit-edit-form">

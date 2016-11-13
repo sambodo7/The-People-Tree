@@ -14,8 +14,11 @@ function respone( err, data, res ) {
 
 }
 
-router.post( "/", ( req, res ) => {
+router.post( "/editPerson", ( req, res ) => {
+
+    tree.updatePerson( req.body, err => res.status( 205 ).end() );
     res.json( {} );
+
 } )
 
 router.get( "/parents", (req, res) => {

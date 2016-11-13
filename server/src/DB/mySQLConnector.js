@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var config = require('./config');
+var config = require('../config');
 
 var pool      =    mysql.createPool({
     connectionLimit : 100, //important
@@ -42,7 +42,7 @@ function handle_database(query, callback) {
 exports.getParents = function(childId, callback) {
     if(!childId) {
         callback(new Error("no childID decleared"));
-        return;
+
     }
     else {
         handle_database("SELECT * " +
@@ -56,7 +56,7 @@ exports.getParents = function(childId, callback) {
 exports.getChildren = function(parentId, callback) {
     if(!parentId) {
         callback(new Error("no paarentID decleared"));
-        return;
+
     }
     else {
         handle_database("SELECT * " +
@@ -70,7 +70,7 @@ exports.getChildren = function(parentId, callback) {
 exports.getByFacebookID = function(facebookID, callback) {
     if(!facebookID) {
         callback(new Error("no FacebookID decleared"));
-        return;
+
     }
     else {
         handle_database("SELECT * " +
@@ -78,3 +78,25 @@ exports.getByFacebookID = function(facebookID, callback) {
             "WHERE PERSON.FACEBOOK_ID='" + facebookID + "'", callback);
     }
 };
+
+exports.updatePerson = function( info, callback ) {
+
+    if( !info || !info.PERSON_ID ) {
+        callback( new Error( "I don't know what person to update" ) );
+    }
+    else {
+        let setString = "";
+        for( prop in info ) {
+
+            if ( !( prop === "PERSON_ID" ) && !( info[ prop ] === "" ) ) {
+                setString += `${ prop }="${ info[ prop ] }", `;
+            }
+
+        }
+        const updateString = `UPDATE PERSON ` +
+            `SET ${ setString.trim().slice( 0, -1 ) } ` +
+            `WHERE PERSON_ID="${ info.PERSON_ID }"`;
+        console.log( updateString )
+        handle_database( updateString, callback );
+    }
+}

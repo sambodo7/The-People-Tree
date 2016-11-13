@@ -6,11 +6,28 @@ function displayAsideInfo ( node ) {
 
     for( prop in nodeData.nodes._data[node].info ) {
         if(nodeData.nodes._data[node].info[prop]) {
-            if( prop === "PERSON_ID" ) {
-                tableBuilder = tableBuilder + "<tr hidden><th>" + prop + "</th><td id='currentPerson'>" + nodeData.nodes._data[node].info[prop] + "</td></tr>"
-            } else {
-                tableBuilder = tableBuilder + "<tr><th>" + prop + "</th><td>" + nodeData.nodes._data[node].info[prop] + "</td></tr>"
+            switch ( prop ) {
+
+                case "PERSON_ID":
+                    tableBuilder = tableBuilder + "<tr hidden><th>" + prop + "</th><td id='currentPerson'>" + nodeData.nodes._data[node].info[prop] + "</td></tr>";
+                    break;
+
+                case "DOB":
+                case "DOD":
+                    var date = new Date( nodeData.nodes._data[node].info[prop] ).toLocaleDateString();
+                    tableBuilder = tableBuilder + "<tr><th>" + prop + "</th><td>" + date + "</td></tr>";
+                    break;
+
+                case "CHILD_ID":
+                case "PARENT_ID":
+                case "TYPE":
+                    break;
+
+                default:
+                    tableBuilder = tableBuilder + "<tr><th>" + prop + "</th><td>" + nodeData.nodes._data[node].info[prop] + "</td></tr>";
+                    break;
             }
+
         }
 
     }
@@ -21,13 +38,16 @@ function displayAsideInfo ( node ) {
 
 function mapPersonDataToEdit ( personInfo ) {
 
+
+
+    $("#id-edit").val( personInfo.PERSON_ID );
     $("#first-name-edit").val( personInfo.FIRST_NAME );
     $("#middle-name-edit").val( personInfo.MIDDLE_NAMES );
     $("#last-name-edit").val( personInfo.LAST_NAME );
     $("#maiden-name-edit").val( personInfo.MAIDEN_NAME );
     $("#alias-edit").val( personInfo.ALIAS );
-    $("#DOB-edit").val( personInfo.DOB );
-    $("#DOD-edit").val( personInfo.DOD );
+    $("#DOB-edit").val( personInfo.DOB ? new Date( personInfo.DOB ).toString( "yyyy-MM-dd" ) : null );
+    $("#DOD-edit").val( personInfo.DOD ? new Date( personInfo.DOD ).toString( "yyyy-MM-dd" ) : null );
     $("#sex-edit").val( personInfo.SEX );
     $("#COD-edit").val( personInfo.COD );
 
@@ -127,9 +147,10 @@ $( "#edit-save" ).on( "click", () => savePersonEdit() );
 $('#edit-person').submit( event => {
     
     event.preventDefault(); // Stops browser from navigating away from page
-    var data = {};
+    var data = $('#edit-person').serialize();
     // build a json object or do something with the form, store in data
-    $.post( config.apiBase, data, resp => {
+    $.post( `${ config.apiBase }/editPerson`, data, resp => {
         // do something when it was successful
-    });
-});
+    } );
+
+} );
