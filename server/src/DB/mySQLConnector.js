@@ -32,14 +32,14 @@ function handle_database(query, callback) {
             }          
         });
 
-        connection.on('error', function(err) {      
+        connection.on('error', err => {      
             res.json({"code" : 100, "status" : "Error in connection database"});
             return;    
         });
     });
 }
 
-exports.getParents = function(childId, callback) {
+exports.getParents = (childId, callback) => {
     if(!childId) {
         callback(new Error("no childID decleared"));
 
@@ -53,7 +53,7 @@ exports.getParents = function(childId, callback) {
     }
 };
 
-exports.getChildren = function(parentId, callback) {
+exports.getChildren = (parentId, callback) => {
     if(!parentId) {
         callback(new Error("no paarentID decleared"));
 
@@ -67,7 +67,7 @@ exports.getChildren = function(parentId, callback) {
     }
 };
 
-exports.getByFacebookID = function(facebookID, callback) {
+exports.getByFacebookID = (facebookID, callback) => {
     if(!facebookID) {
         callback(new Error("no FacebookID decleared"));
 
@@ -79,7 +79,7 @@ exports.getByFacebookID = function(facebookID, callback) {
     }
 };
 
-exports.updatePerson = function( info, callback ) {
+exports.updatePerson = ( info, callback ) => {
 
     if( !info || !info.PERSON_ID ) {
         callback( new Error( "I don't know what person to update" ) );
